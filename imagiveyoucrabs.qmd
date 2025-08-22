@@ -7,11 +7,7 @@ execute:
 ---
 
 ```{r}
-pacman::p_load("lterdatasampler", "tidyverse", "ggthemes")
-```
-
-```{r}
-pie_crab
+pacman::p_load("lterdatasampler", "tidyverse", "ggthemes","kableExtra")
 ```
 
 ```{r}
@@ -26,6 +22,12 @@ crab_sub <- pie_crab %>%
   group_by(site) %>% 
   summarize(crab_mean = round(mean(size),2),
             crab_sd = sd(size),
-            crab_count = n())
+            crab_count = n()) 
+
+crab_sub |> 
+  kable(col.names = c("Site", "Crab Mean (mm)", "Crab STD (mm)", "Crab Count")) |> 
+  kable_material_dark()
+
+
 ```
 
