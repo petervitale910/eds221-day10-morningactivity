@@ -5,13 +5,25 @@ editor: visual
 execute: 
   echo: FALSE
 ---
-
+In these figures we attempt to show that crab carapace changes based on lattitude. in the graph we are showing the distributions at each latitude. The table shows summary statistics of carapace size based on site location. thank you. thank you. 
 ```{r}
 pacman::p_load("lterdatasampler", "tidyverse", "ggthemes","kableExtra")
 ```
 
 ```{r}
-#| fig-cap: "i got it"
+
+
+  
+
+pacman::p_load("lterdatasampler", "tidyverse", "ggthemes")
+```
+
+```{r}
+```
+
+```{r}
+#| fig-cap: "this is my caption"
+
 ggplot(pie_crab, aes(size, latitude)) +
   geom_point(color = "#CCCCCC") +
   theme_solarized_2(light = FALSE)
@@ -30,4 +42,10 @@ crab_sub |>
 
 
 ```
+Horst A, Brun J (2023). _lterdatasampler:
+  Educational Dataset Examples from the Long Term
+  Ecological Research Program_. R package version
+  0.1.1,
+  <https://CRAN.R-project.org/package=lterdatasampler>.
+
 
