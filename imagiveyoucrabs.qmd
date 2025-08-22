@@ -2,6 +2,8 @@
 title: "imagiveyoucrabs"
 format: html
 editor: visual
+execute: 
+  echo: FALSE
 ---
 
 ```{r}
@@ -13,8 +15,17 @@ pie_crab
 ```
 
 ```{r}
+#| fig-cap: "i got it"
 ggplot(pie_crab, aes(size, latitude)) +
   geom_point(color = "#CCCCCC") +
   theme_solarized_2(light = FALSE)
+```
+
+```{r}
+crab_sub <- pie_crab %>% 
+  group_by(site) %>% 
+  summarize(crab_mean = round(mean(size),2),
+            crab_sd = sd(size),
+            crab_count = n())
 ```
 
