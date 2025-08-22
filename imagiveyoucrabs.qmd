@@ -3,11 +3,18 @@ title: "imagiveyoucrabs"
 format: html
 editor: visual
 ---
+
 ```{r}
-pacman::p_load("lterdatasampler")
+pacman::p_load("lterdatasampler", "tidyverse", "ggthemes")
 ```
 
 ```{r}
 pie_crab
+```
+
+```{r}
+ggplot(pie_crab, aes(size, latitude)) +
+  geom_point(color = "#CCCCCC") +
+  theme_solarized_2(light = FALSE)
 ```
 
